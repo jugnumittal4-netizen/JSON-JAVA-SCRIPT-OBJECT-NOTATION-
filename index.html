@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>
+            useing js async and await feature
+        </h2>
+        <h4 id = "demo"></h4>
+        <script>
+            async function add(a,b){
+                let response = await a+b;
+                display(response);
+            }
+            function display(some){
+                document.getElementById("demo").innerHTML = some;
+            }
+            add(5,6);
+           </script>
+
+    </body>
+</html>
