@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>JSON in JavaScript</h2>
+        <p> json means JavaScript Object Notation</p>
+        <h3 id = "demo"></h3>
+        <script>
+            var myJSON = {name:"John", age:15, grade:8};
+            var myobj = JSON.stringify(myJSON);
+            var myobj2 = JSON.parse(myobj);
+            document.getElementById("demo").innerHTML =myJSON.name;
+
+        </script>
+    </body>
+</html>
