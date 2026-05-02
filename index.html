@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        <h2>
-            useing js async and await feature
-        </h2>
-        <h4 id = "demo"></h4>
-        <script>
-            async function add(a,b){
-                let response = await a+b;
-                display(response);
+<body>
+    <h2> js promises</h2>
+    <p id = "demo"></p>
+    <script>
+        function myDisplay(some){
+            document.getElementById("demo").innerHTML = some;
+        }
+        function sum(a,b){
+        var sum = a + b;
+        myDisplay(sum);
+        }
+        let mypromise = new Promise(function(myResolve, myReject) {
+            let x = 0;
+            if (x == 0) {
+                myResolve("OK");
+            } else {
+                myReject("Error");
             }
-            function display(some){
-                document.getElementById("demo").innerHTML = some;
-            }
-            add(5,6);
-           </script>
+        });
+        mypromise.then(
+            function(value){sum(5,6)},
+            function(error){sum(error)}
+        );
+        </script>
 
-    </body>
+
+</body>
 </html>
