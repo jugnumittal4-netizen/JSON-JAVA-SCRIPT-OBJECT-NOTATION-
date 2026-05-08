@@ -1,30 +1,22 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
-<body>
-    <h2> js promises</h2>
-    <p id = "demo"></p>
-    <script>
-        function myDisplay(some){
-            document.getElementById("demo").innerHTML = some;
-        }
-        function sum(a,b){
-        var sum = a + b;
-        myDisplay(sum);
-        }
-        let mypromise = new Promise(function(myResolve, myReject) {
-            let x = 0;
-            if (x == 0) {
-                myResolve("OK");
-            } else {
-                myReject("Error");
+    <body>
+        <h2>
+            js async functions
+        </h2>
+        <h3 id = "demo"></h3>
+        <script>
+            async function product(a,b){
+                let response = await a * b;
+
+                return response;
+
             }
-        });
-        mypromise.then(
-            function(value){sum(5,6)},
-            function(error){sum(error)}
-        );
+            function display(some){
+                document.getElementById("demo").innerHTML = some;
+            }
+            product(5,20).then(display);
+
         </script>
-
-
-</body>
+   </body>
 </html>
